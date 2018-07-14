@@ -45,8 +45,7 @@ class AtCommandsPlugin(octoprint.plugin.SettingsPlugin,
 
     def get_assets(self):
         return dict(
-            js=["js/AtCommands.js"],
-            css=["css/AtCommands.css"]
+            js=["js/AtCommands.js"]
         )
 
     def get_update_information(self):
