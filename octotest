@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "#### OctoTest BASH SCRIPT ####"
+if [ "$1" != "" ]; then
+    echo "Parameters: $1"
+fi
+
+exit
+
