@@ -1,6 +1,6 @@
 # OctoPrint-AtCommands
 
-**TODO:** Describe what your plugin does.
+Executes system commands/scripts using @commands.
 
 ## Setup
 
@@ -9,9 +9,7 @@ or manually using this URL:
 
     https://github.com/ieatacid/OctoPrint-AtCommands/archive/master.zip
 
-**TODO:** Describe how to install your plugin, if more needs to be done than just installing it via pip or through
-the plugin manager.
 
-## Configuration
+## Screenshot
 
-**TODO:** Describe your plugin's configuration options (if any).
+![Settings](extras/assets/img/settings.png?raw=true)

@@ -81,14 +81,12 @@ class AtCommandsPlugin(octoprint.plugin.SettingsPlugin,
 
         if at_cmd["type"] == "system":
             self._logger.info("AtCommand '@%s' is type 'system'" % (command))
-
+            self._logger.info("Executing system command '%s'" % (at_cmd["command"]))
             try:
             	if len(parameters) > 0:
-            		self._logger.info("Executing system command '%s'" % (at_cmd["command"]))
             		self._logger.info("...with parameters: %s" % (parameters))
             		r = subprocess.call([at_cmd["command"], parameters])
             	else:
-            		self._logger.info("Executing system command '%s'" % (at_cmd["command"]))
                 	r = subprocess.call(at_cmd["command"])
             except:
                 e = sys.exc_info()[0]
@@ -97,9 +95,10 @@ class AtCommandsPlugin(octoprint.plugin.SettingsPlugin,
 
             self._logger.info("Command '%s' returned: %s" % (command, r))
 
-        elif at_cmd["type"] == "octoprint":
-            self._logger.info("AtCommand '@%s' is type 'octoprint'" % (command))
+        elif at_cmd["type"] == "gcode":
+            self._logger.info("AtCommand '@%s' is type 'gcode'" % (command))
             self._logger.info("Executing octoprint command '%s'" % (at_cmd["command"]))
+            self._printer.commands(this_command["command"].split(";"))
 
         else:
             self._logger.error("AtCommand type not found or not known for '@%s'" % command)
